@@ -1,0 +1,187 @@
+{
+ "library": "cublasdx",
+ "version": "0.4.0",
+ "operators": [
+  {
+   "name": "Alignment",
+   "template_params": "unsigned int AAlignment, unsigned int BAlignment, unsigned int CAlignment",
+   "file": "operators/alignment.hpp"
+  },
+  {
+   "name": "Arrangement",
+   "template_params": "arrangement AOrder, arrangement BOrder = arrangement::col_major, arrangement COrder = arrangement::col_major",
+   "file": "operators/arrangement.hpp"
+  },
+  {
+   "name": "FillMode",
+   "template_params": "fill_mode Value",
+   "file": "operators/fill_mode.hpp"
+  },
+  {
+   "name": "Function",
+   "template_params": "function Value",
+   "file": "operators/function.hpp"
+  },
+  {
+   "name": "LeadingDimension",
+   "template_params": "unsigned int LDA, unsigned int LDB, unsigned int LDC",
+   "file": "operators/ld.hpp"
+  },
+  {
+   "name": "Precision",
+   "template_params": "class PA, class PB = PA, class PC = PA",
+   "file": "operators/precision.hpp"
+  },
+  {
+   "name": "Size",
+   "template_params": "unsigned int M, unsigned int N, unsigned int K = 1",
+   "file": "operators/size.hpp"
+  },
+  {
+   "name": "Diagonal",
+   "template_params": "diagonal Value",
+   "file": "operators/trsm_operators.hpp"
+  },
+  {
+   "name": "Side",
+   "template_params": "side Value",
+   "file": "operators/trsm_operators.hpp"
+  },
+  {
+   "name": "Type",
+   "template_params": "type Value",
+   "file": "operators/type.hpp"
+  },
+  {
+   "name": "BlockDim",
+   "template_params": "unsigned int X, unsigned int Y = 1, unsigned int Z = 1",
+   "file": "operators.hpp"
+  },
+  {
+   "name": "SM",
+   "template_params": "unsigned int Architecture",
+   "file": "operators.hpp"
+  },
+  {
+   "name": "Block",
+   "template_params": "",
+   "file": "operators.hpp"
+  }
+ ],
+ "enums": {
+  "arrangement": [
+   "col_major",
+   "row_major"
+  ],
+  "fill_mode": [
+   "upper",
+   "lower"
+  ],
+  "function": [
+   "MM",
+   "TRSM"
+  ],
+  "operator_type": [
+   "size",
+   "precision",
+   "type",
+   "function",
+   "fill_mode",
+   "transpose_mode",
+   "diagonal",
+   "side",
+   "sm",
+   "alignment",
+   "arrangement",
+   "ld",
+   "block",
+   "thread",
+   "block_dim",
+   "experimental_tile",
+   "experimental_static_block_dim"
+  ],
+  "transpose_mode": [
+   "non_transposed",
+   "transposed",
+   "conj_transposed"
+  ],
+  "diagonal": [
+   "non_unit",
+   "unit"
+  ],
+  "side": [
+   "left",
+   "right"
+  ]
+ },
+ "aliases": {
+  "col_major": "arrangement::col_major",
+  "left_layout": "arrangement::col_major",
+  "row_major": "arrangement::row_major",
+  "right_major": "arrangement::row_major",
+  "N": "transpose_mode::non_transposed",
+  "T": "transpose_mode::transposed",
+  "C": "transpose_mode::conj_transposed"
+ },
+ "traits": {
+  "can_be_impacted_by_nvbug_5218000": "bool",
+  "condition": "bool",
+  "a_size": "unsigned int",
+  "b_size": "unsigned int",
+  "c_size": "unsigned int",
+  "lda": "unsigned int",
+  "ldb": "unsigned int",
+  "ldc": "unsigned int",
+  "a_alignment": "unsigned int",
+  "b_alignment": "unsigned int",
+  "c_alignment": "unsigned int",
+  "a_dim": "COMMONDX_STL_NAMESPACE::tuple<unsigned int, unsigned int>",
+  "b_dim": "COMMONDX_STL_NAMESPACE::tuple<unsigned int, unsigned int>",
+  "c_dim": "COMMONDX_STL_NAMESPACE::tuple<unsigned int, unsigned int>",
+  "suggested_block_dim": "dim3",
+  "block_dim": "dim3",
+  "max_threads_per_block": "unsigned int",
+  "min_blocks_per_multiprocessor": "unsigned int"
+ },
+ "types": [
+  "a_type",
+  "a_value_type",
+  "b_type",
+  "b_value_type",
+  "base_type",
+  "c_type",
+  "c_value_type",
+  "db_a_type",
+  "db_b_type",
+  "db_c_type",
+  "description_type",
+  "execution_type",
+  "operator_wrapper_type"
+ ],
+ "member_functions": [
+  "execute",
+  "get_block_dim",
+  "get_cute_layout",
+  "get_layout_gmem_a",
+  "get_layout_gmem_b",
+  "get_layout_gmem_c",
+  "get_layout_smem_a",
+  "get_layout_smem_b",
+  "get_layout_smem_c",
+  "get_partitioner",
+  "get_suggested_block_dim",
+  "suggest_cute_layout_smem",
+  "suggest_layout_smem_a",
+  "suggest_layout_smem_b",
+  "suggest_layout_smem_c",
+  "suggest_partitioner"
+ ],
+ "free_functions": [
+  "alignment_of<Description>",
+  "copy",
+  "copy_wait",
+  "leading_dimension_of<Description>",
+  "slice_shared_memory",
+  "slice_shared_memory_ab"
+ ]
+}

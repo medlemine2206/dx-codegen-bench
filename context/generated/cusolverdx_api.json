@@ -1,0 +1,227 @@
+{
+ "library": "cusolverdx",
+ "version": "0.2.0",
+ "operators": [
+  {
+   "name": "Arrangement",
+   "template_params": "arrangement Arr, arrangement Brr = Arr",
+   "file": "operators/arrangement.hpp"
+  },
+  {
+   "name": "BatchesPerBlock",
+   "template_params": "unsigned Value",
+   "file": "operators/batches_per_block.hpp"
+  },
+  {
+   "name": "BlockDim",
+   "template_params": "unsigned int X, unsigned int Y = 1, unsigned int Z = 1",
+   "file": "operators/block_dim.hpp"
+  },
+  {
+   "name": "Diag",
+   "template_params": "diag d",
+   "file": "operators/diag.hpp"
+  },
+  {
+   "name": "Block",
+   "template_params": "",
+   "file": "operators/execution.hpp"
+  },
+  {
+   "name": "FillMode",
+   "template_params": "fill_mode Value",
+   "file": "operators/fill_mode.hpp"
+  },
+  {
+   "name": "Function",
+   "template_params": "function Value",
+   "file": "operators/function.hpp"
+  },
+  {
+   "name": "LeadingDimension",
+   "template_params": "unsigned int LDA, unsigned int LDB = LDA",
+   "file": "operators/leading_dimension.hpp"
+  },
+  {
+   "name": "PrecisionCheck",
+   "template_params": "class T",
+   "file": "operators/precision.hpp"
+  },
+  {
+   "name": "Precision",
+   "template_params": "class PA, class PX = PA, class PB = PA",
+   "file": "operators/precision.hpp"
+  },
+  {
+   "name": "Side",
+   "template_params": "side s",
+   "file": "operators/side.hpp"
+  },
+  {
+   "name": "Size",
+   "template_params": "unsigned int M, unsigned int N = M, unsigned int K = 1",
+   "file": "operators/size.hpp"
+  },
+  {
+   "name": "SM",
+   "template_params": "unsigned int Architecture",
+   "file": "operators/sm.hpp"
+  },
+  {
+   "name": "TransposeMode",
+   "template_params": "transpose Value",
+   "file": "operators/transpose.hpp"
+  },
+  {
+   "name": "Type",
+   "template_params": "type Value",
+   "file": "operators/type.hpp"
+  }
+ ],
+ "enums": {
+  "arrangement": [
+   "col_major",
+   "row_major"
+  ],
+  "diag": [
+   "non_unit",
+   "unit"
+  ],
+  "fill_mode": [
+   "upper",
+   "lower"
+  ],
+  "function": [
+   "potrf",
+   "potrs",
+   "posv",
+   "getrf_no_pivot",
+   "getrs_no_pivot",
+   "gesv_no_pivot",
+   "getrf_partial_pivot",
+   "getrs_partial_pivot",
+   "gesv_partial_pivot",
+   "geqrf",
+   "unmqr",
+   "gelqf",
+   "unmlq",
+   "gels",
+   "trsm"
+  ],
+  "operator_type": [
+   "size",
+   "function",
+   "precision",
+   "type",
+   "fill_mode",
+   "leading_dimension",
+   "arrangement",
+   "transpose",
+   "diag",
+   "side",
+   "sm",
+   "thread",
+   "block",
+   "block_dim",
+   "batches_per_block"
+  ],
+  "side": [
+   "left",
+   "right"
+  ],
+  "transpose": [
+   "non_transposed",
+   "transposed",
+   "conj_transposed"
+  ]
+ },
+ "aliases": {
+  "col_major": "arrangement::col_major",
+  "left_layout": "arrangement::col_major",
+  "row_major": "arrangement::row_major",
+  "right_major": "arrangement::row_major",
+  "non_unit": "diag::non_unit",
+  "unit": "diag::unit",
+  "upper": "fill_mode::upper",
+  "lower": "fill_mode::lower",
+  "potrf": "function::potrf",
+  "potrs": "function::potrs",
+  "posv": "function::posv",
+  "getrf_no_pivot": "function::getrf_no_pivot",
+  "getrs_no_pivot": "function::getrs_no_pivot",
+  "gesv_no_pivot": "function::gesv_no_pivot",
+  "getrf_partial_pivot": "function::getrf_partial_pivot",
+  "getrs_partial_pivot": "function::getrs_partial_pivot",
+  "gesv_partial_pivot": "function::gesv_partial_pivot",
+  "geqrf": "function::geqrf",
+  "unmqr": "function::unmqr",
+  "gelqf": "function::gelqf",
+  "unmlq": "function::unmlq",
+  "gels": "function::gels",
+  "trsm": "function::trsm",
+  "left": "side::left",
+  "right": "side::right",
+  "non_trans": "transpose::non_transposed",
+  "trans": "transpose::transposed",
+  "conj_trans": "transpose::conj_transposed"
+ },
+ "traits": {
+  "m_size": "auto",
+  "n_size": "auto",
+  "k_size": "auto",
+  "lda": "auto",
+  "ldb": "auto",
+  "a_size": "auto",
+  "b_size": "auto",
+  "is_function_cholesky": "bool",
+  "is_function_lu": "bool",
+  "is_function_lu_no_pivot": "bool",
+  "is_function_lu_partial_pivot": "bool",
+  "is_function_qr": "bool",
+  "is_function_unmq": "bool",
+  "is_function_solver": "bool",
+  "batches_per_block": "unsigned int",
+  "can_be_impacted_by_nvbug_5288270": "bool",
+  "suggested_batches_per_block": "unsigned int",
+  "suggested_block_dim": "dim3",
+  "block_dim": "dim3",
+  "shared_memory_size": "unsigned int",
+  "max_threads_per_block": "unsigned int",
+  "min_blocks_per_multiprocessor": "unsigned int",
+  "type": "auto",
+  "a_arrangement": "auto",
+  "b_arrangement": "auto",
+  "transpose": "auto",
+  "fill_mode": "auto",
+  "side": "auto",
+  "diag": "auto",
+  "sm": "auto"
+ },
+ "types": [
+  "a_cuda_data_type",
+  "a_data_type",
+  "b_cuda_data_type",
+  "b_data_type",
+  "base_type",
+  "status_type",
+  "x_cuda_data_type",
+  "x_data_type"
+ ],
+ "member_functions": [
+  "execute",
+  "get_block_dim",
+  "get_suggested_batches_per_block",
+  "get_suggested_block_dim",
+  "get_thread_id"
+ ],
+ "free_functions": [
+  "arrangement_of<Description>",
+  "block_dim_of<Description>",
+  "function_of<Description>",
+  "leading_dimension_of<Description>",
+  "precision_of<Description>",
+  "size_of<Description>",
+  "sm_of<Description>",
+  "type_of<Description>"
+ ]
+}

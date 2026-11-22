@@ -1,0 +1,160 @@
+{
+ "library": "cufftdx",
+ "version": "1.5.0",
+ "operators": [
+  {
+   "name": "FFTsPerBlock",
+   "template_params": "unsigned int Value",
+   "file": "operators/block_operators.hpp"
+  },
+  {
+   "name": "ElementsPerThread",
+   "template_params": "unsigned int Value",
+   "file": "operators/block_operators.hpp"
+  },
+  {
+   "name": "Direction",
+   "template_params": "fft_direction Value",
+   "file": "operators/direction.hpp"
+  },
+  {
+   "name": "Precision",
+   "template_params": "class T",
+   "file": "operators/precision.hpp"
+  },
+  {
+   "name": "RealFFTOptions",
+   "template_params": "complex_layout RealLayout, real_mode RealMode = real_mode::normal",
+   "file": "operators/real_fft_options.hpp"
+  },
+  {
+   "name": "Size",
+   "template_params": "unsigned int Value",
+   "file": "operators/size.hpp"
+  },
+  {
+   "name": "Type",
+   "template_params": "fft_type Value",
+   "file": "operators/type.hpp"
+  },
+  {
+   "name": "BlockDim",
+   "template_params": "unsigned int X, unsigned int Y = 1, unsigned int Z = 1",
+   "file": "operators.hpp"
+  },
+  {
+   "name": "SM",
+   "template_params": "unsigned int Architecture",
+   "file": "operators.hpp"
+  },
+  {
+   "name": "Thread",
+   "template_params": "",
+   "file": "operators.hpp"
+  },
+  {
+   "name": "Block",
+   "template_params": "",
+   "file": "operators.hpp"
+  }
+ ],
+ "enums": {
+  "fft_direction": [
+   "forward",
+   "inverse"
+  ],
+  "fft_operator": [
+   "direction",
+   "precision",
+   "size",
+   "sm",
+   "type",
+   "real_fft_options",
+   "thread",
+   "block",
+   "elements_per_thread",
+   "ffts_per_block",
+   "block_dim"
+  ],
+  "complex_layout": [
+   "natural",
+   "packed",
+   "full"
+  ],
+  "real_mode": [
+   "normal",
+   "folded",
+   "batch_optimized"
+  ],
+  "fft_type": [
+   "c2c",
+   "c2r",
+   "r2c"
+  ]
+ },
+ "aliases": {},
+ "traits": {
+  "is_thread_execution": "bool",
+  "is_block_execution": "bool",
+  "is_folded": "bool",
+  "fft_execution_size": "auto",
+  "fft_memory_size": "auto",
+  "function_id": "auto",
+  "condition": "bool",
+  "elements_per_thread": "unsigned int",
+  "effective_elements_per_thread": "unsigned int",
+  "stride": "unsigned int",
+  "storage_size": "unsigned int",
+  "input_length": "unsigned int",
+  "output_length": "unsigned int",
+  "implicit_type_batching": "unsigned int",
+  "input_ept": "unsigned int",
+  "output_ept": "unsigned int",
+  "max_block_size": "auto",
+  "store_ept": "unsigned int",
+  "is_this_fft_max_block_size": "bool",
+  "use_bluestein": "bool",
+  "fft_blue_size": "auto",
+  "max_meaningful_ept": "unsigned int",
+  "block_dim": "dim3",
+  "ffts_per_block": "unsigned int",
+  "suggested_ffts_per_block": "unsigned int",
+  "suggested_elements_per_thread": "unsigned int",
+  "shared_memory_size": "unsigned int",
+  "max_threads_per_block": "unsigned int",
+  "requires_workspace": "bool",
+  "workspace_size": "unsigned int",
+  "requires_redistribution": "bool",
+  "is_redistributable": "bool"
+ },
+ "types": [
+  "base_type",
+  "description_type",
+  "execution_type",
+  "fft_block_execution_type",
+  "fft_thread_execution_type",
+  "host_workspace_type",
+  "input_type",
+  "ldg_type",
+  "operator_wrapper_type",
+  "output_type",
+  "scalar_type",
+  "value_type",
+  "workspace_type"
+ ],
+ "member_functions": [
+  "execute",
+  "get_input_ept",
+  "get_input_length",
+  "get_output_ept",
+  "get_output_length"
+ ],
+ "free_functions": [
+  "direction_of<Description>",
+  "make_workspace",
+  "precision_of<Description>",
+  "size_of<Description>",
+  "sm_of<Description>",
+  "type_of<Description>"
+ ]
+}
